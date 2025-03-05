@@ -3,48 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Bản Thân</title>
+    <title>Nguyễn Ngọc Đường Phi - Portfolio Chuyên Nghiệp</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        .container {
-            width: 50%;
-            background: white;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        .custom-gradient {
+            background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
         }
-        img {
-            width: 150px;
-            height: 150px;
+        .card-hover {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .skill-badge {
+            transition: all 0.2s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .blob {
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            object-fit: cover;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-            color: #666;
+            filter: blur(80px);
+            z-index: -1;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <img src="avatar.jpg" alt="Ảnh đại diện">
-        <h1>Nguyễn Ngọc Đường Phi</h1>
-        <p><strong>Giới tính:</strong> Nam</p>
-        <p><strong>Tuổi:</strong> 21</p>
-        <p><strong>Nghề nghiệp:</strong> Sinh viên</p>
-        <p><strong>Lớp:</strong> 21DTHB2</p>
-        <p><strong>Ngành:</strong> Công nghệ thông tin</p>
-        <p><strong>Sở thích:</strong> Lập trình, đọc sách, chơi game</p>
-    </div>
+<body class="min-h-screen relative">
+    <div class="blob"></div>
+    
+    <header class="custom-gradient text-white py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <img src="/api/placeholder/250/250" alt="Ảnh đại diện" class="mx-auto w-64 h-64 rounded-full border-6 border-white shadow-2xl mb-8 transform hover:rotate-6 transition-transform duration-300">
+                
+                <h1 class="text-5xl font-bold mb-4 tracking-tight">Nguyễn Ngọc Đường Phi</h1>
+                <p class="text-2xl opacity-90 font-light">Nhà Phát Triển Phần Mềm | Chuyên Gia Công Nghệ Thông Tin</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 relative z-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            <section class="md:col-span-2 bg-white rounded-2xl p-8 card-hover">
+                <h2 class="text-3xl font-semibold text-purple-600 mb-6 text-center">Giới Thiệu Chuyên Môn</h2>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Với đam mê sáng tạo và không ngừng học hỏi, tôi là một nhà phát triển phần mềm trẻ tuổi luôn tìm kiếm những giải pháng công nghệ đột phá. 
+                    Tôi chuyên về việc xây dựng các ứng dụng web hiện đại và giải quyết các thách thức kỹ thuật phức tạp.
+                </p>
+            </section>
+
+            <section class="bg-white rounded-2xl p-8 card-hover">
+                <h2 class="text-3xl font-semibold text-blue-600 mb-6 text-center">Kỹ Năng Nổi Bật</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-3 rounded-lg text-center skill-badge">
+                        <span class="font-semibold text-blue-700">Web Dev</span>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded-lg text-center skill-badge">
+                        <span class="font-semibold text-green-700">Python</span>
+                    </div>
+                    <div class="bg-red-50 p-3 rounded-lg text-center skill-badge">
+                        <span class="font-semibold text-red-700">React</span>
+                    </div>
+                    <div class="bg-purple-50 p-3 rounded-lg text-center skill-badge">
+                        <span class="font-semibold text-purple-700">Database</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+            <section class="bg-white rounded-2xl p-8 card-hover">
+                <h2 class="text-3xl font-semibold text-green-600 mb-6 text-center">Dự Án Tiêu Biểu</h2>
+                <ul class="space-y-4">
+                    <li class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-lg text-gray-800">Hệ Thống Quản Lý Sinh Viên</h3>
+                        <p class="text-gray-600">Ứng dụng quản lý toàn diện sử dụng React và Spring Boot</p>
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-lg text-gray-800">Ứng Dụng Đặt Vé Trực Tuyến</h3>
+                        <p class="text-gray-600">Giải pháp đặt vé hiệu quả với Django</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="bg-white rounded-2xl p-8 card-hover">
+                <h2 class="text-3xl font-semibold text-red-600 mb-6 text-center">Liên Hệ Chuyên Nghiệp</h2>
+                <div class="space-y-4">
+                    <a href="mailto:contact@example.com" class="block bg-blue-50 p-4 rounded-lg hover:bg-blue-100 transition">
+                        <div class="flex items-center">
+                            <svg class="w-8 h-8 mr-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 13.858c-1.17.642-3.943 2.067-5.156 2.737-1.212.67-2.157.446-2.934-.52-.775-.968-1.555-1.94-2.328-2.912-.818-1.03-.84-2.548.253-3.246 1.093-.698 2.555-1.332 3.66-2.031.996-.64 1.672.008 2.234.84.495.723.99 1.445 1.48 2.17.508.748 1.09.978 1.93.586.84-.39 2.949-1.787 3.89-2.44.94-.653 1.002-1.537.234-2.277-.766-.74-2.138-1.736-3.127-2.292-1.027-.585-2.432-.64-3.494.257-1.153.977-2.368 1.88-3.529 2.83-.612.498-1.22 1.002-1.835 1.5-.74.624-1.09 1.443-.792 2.385.297.943 1.01 1.622 1.89 1.984.935.384 1.945.514 2.95.526.935.012 1.364.354 1.002 1.256-.465 1.14-1.08 2.212-1.62 3.317-.328.668-.79.94-1.56.622-1.138-.476-2.26-.982-3.378-1.504-.474-.22-.932-.48-1.406-.698-.936-.434-1.745-.287-2.291.622-.54.896-.09 1.684.687 2.327.764.64 1.542 1.266 2.325 1.882 1.202.958 2.524 1.442 3.976.99 1.458-.454 2.542-1.356 3.492-2.476.32-.373.62-.764.91-1.16.436-.59.42-1.33-.04-1.864-.462-.536-1.08-.596-1.72-.233z"/>
+                            </svg>
+                            <span class="text-gray-800">Email</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/yourusername" class="block bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+                        <div class="flex items-center">
+                            <svg class="w-8 h-8 mr-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="text-gray-800">GitHub</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="opacity-75">&copy; 2024 Nguyễn Ngọc Đường Phi. Bản quyền được bảo lưu.</p>
+        </div>
+    </footer>
 </body>
 </html>
